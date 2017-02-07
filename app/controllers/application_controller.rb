@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   
   private
   def log_visitor
+	Rake::Task['db:migrate'].invoke
 	@ip = Socket.ip_address_list
 	@ip2 =  request.env["HTTP_X_FORWARDED_FOR"]
 	@local_ip = @ip[1].inspect.gsub("#<Addrinfo: ", "").gsub(">", "")
