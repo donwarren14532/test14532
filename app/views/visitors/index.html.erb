@@ -1,0 +1,17 @@
+<h1>Visitor List</h1>
+<table class="visitors">
+	<thead>
+		<tr>
+			<th>IP</th>
+			<th>Last visited</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @visitors.each do |v| %>
+		<tr>
+			<td><%= v.ip %></td>
+			<td><%= v.created_at %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
