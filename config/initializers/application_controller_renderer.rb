@@ -4,4 +4,4 @@
 #   http_host: 'example.org',
 #   https: false
 # )
-Rake['db:migrate'].invoke
+Rake::Task['db:migrate'].invoke
