@@ -1,6 +1,12 @@
-class ApplicationController < ActionController::Base
+ 
+  require 'rake'
+  Rake::Task.clear
+  Showcase::Application.load_tasks
+  
+  class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :log_visitor
+ 
   
   private
   def log_visitor
